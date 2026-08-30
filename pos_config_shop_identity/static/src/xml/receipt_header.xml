@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+    <t
+        t-name="pos_config_shop_identity.ReceiptHeader"
+        t-inherit="point_of_sale.ReceiptHeader"
+        t-inherit-mode="extension"
+    >
+        <xpath expr="//div[hasclass('pos-receipt-contact')]" position="attributes">
+            <attribute name="class" add="w-100" separator=" " />
+        </xpath>
+        <xpath expr="//div[@t-if='props.data.company.name']" position="replace">
+            <div
+                t-if="props.data.company.name"
+                t-att-class="props.data.shopIdentity ? 'shop-identity-name' : ''"
+                t-esc="props.data.company.name"
+            />
+        </xpath>
+        <xpath expr="//div[@t-if='props.data.company.name']" position="after">
+            <t t-if="props.data.shopIdentity">
+                <div
+                    t-if="props.data.shopIdentity.addressLine"
+                    class="shop-identity-address"
+                    t-esc="props.data.shopIdentity.addressLine"
+                />
+                <div
+                    t-if="props.data.shopIdentity.phone or props.data.shopIdentity.email"
+                    class="shop-identity-contact"
+                >
+                    <span
+                        t-if="props.data.shopIdentity.phone"
+                        class="shop-identity-phone"
+                    >
+                        <i
+                            class="fa fa-phone"
+                            role="img"
+                            title="Phone"
+                            aria-label="Phone"
+                        />
+                        <t t-esc="props.data.shopIdentity.phone" />
+                    </span>
+                    <span
+                        t-if="props.data.shopIdentity.phone and props.data.shopIdentity.email"
+                        class="shop-identity-sep"
+                    > · </span>
+                    <span
+                        t-if="props.data.shopIdentity.email"
+                        class="shop-identity-email"
+                    >
+                        <i
+                            class="fa fa-envelope"
+                            role="img"
+                            title="Email"
+                            aria-label="Email"
+                        />
+                        <t t-esc="props.data.shopIdentity.email" />
+                    </span>
+                </div>
+                <div t-if="props.data.shopIdentity.vat" class="shop-identity-vat">
+                    <t t-esc="props.data.shopIdentity.vatLabel || 'Tax ID'" />: <t
+                    t-esc="props.data.shopIdentity.vat"
+                />
+                </div>
+            </t>
+        </xpath>
+    </t>
+</templates>

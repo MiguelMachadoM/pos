@@ -1,0 +1,21 @@
+.pos-receipt .pos-receipt-contact {
+    align-self: stretch;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+.pos-receipt .shop-identity-name {
+    font-size: 1.2em;
+    font-weight: 700;
+}
+.pos-receipt .shop-identity-address,
+.pos-receipt .shop-identity-contact {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+.pos-receipt .shop-identity-contact .fa {
+    margin-right: 0.25em;
+    font-size: 0.9em;
+}

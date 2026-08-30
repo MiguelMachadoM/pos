@@ -1,0 +1,126 @@
+# Translation of Odoo Server.
+# This file contains the translation of the module pos_config_shop_identity.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-24 20:00+0000\n"
+"PO-Revision-Date: 2026-08-24 20:00+0000\n"
+"Last-Translator: Miguel Machado\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: pos_config_shop_identity
+#: model:ir.model.fields,field_description:pos_config_shop_identity.field_pos_config__shop_identity_city
+#: model:ir.model.fields,field_description:pos_config_shop_identity.field_res_config_settings__pos_shop_identity_city
+msgid "City"
+msgstr "Ciudad"
+
+#. module: pos_config_shop_identity
+#: model:ir.model.fields,field_description:pos_config_shop_identity.field_pos_config__shop_identity_country_id
+#: model:ir.model.fields,field_description:pos_config_shop_identity.field_res_config_settings__pos_shop_identity_country_id
+msgid "Country"
+msgstr "País"
+
+#. module: pos_config_shop_identity
+#: model:ir.model.fields,field_description:pos_config_shop_identity.field_pos_config__shop_identity_enabled
+#: model:ir.model.fields,field_description:pos_config_shop_identity.field_res_config_settings__pos_shop_identity_enabled
+#: model_terms:ir.ui.view,arch_db:pos_config_shop_identity.res_config_settings_view_form
+msgid "Custom ticket header identity"
+msgstr "Identidad en el encabezado del ticket"
+
+#. module: pos_config_shop_identity
+#: model:ir.model.fields,field_description:pos_config_shop_identity.field_pos_config__shop_identity_email
+#: model:ir.model.fields,field_description:pos_config_shop_identity.field_res_config_settings__pos_shop_identity_email
+msgid "Email"
+msgstr "Correo electrónico"
+
+#. module: pos_config_shop_identity
+#: model:ir.model.fields,help:pos_config_shop_identity.field_pos_config__shop_identity_enabled
+msgid ""
+"If enabled, this POS prints the shop name, address, phone and email below "
+"instead of the company ones. VAT and website stay those of the company."
+msgstr ""
+"Si está activo, este TPV imprime el nombre, la dirección, el teléfono y el "
+"correo de la tienda en lugar de los de la empresa. El NIF y la web siguen "
+"siendo los de la empresa."
+
+#. module: pos_config_shop_identity
+#: model:ir.model.fields,field_description:pos_config_shop_identity.field_pos_config__shop_identity_phone
+#: model:ir.model.fields,field_description:pos_config_shop_identity.field_res_config_settings__pos_shop_identity_phone
+msgid "Phone"
+msgstr "Teléfono"
+
+#. module: pos_config_shop_identity
+#: model_terms:ir.ui.view,arch_db:pos_config_shop_identity.res_config_settings_view_form
+msgid ""
+"Print a shop name, address, phone and email on this POS receipt instead of "
+"the company ones. VAT and website stay those of the company."
+msgstr ""
+"Imprime nombre, dirección, teléfono y correo de la tienda en el ticket de "
+"este TPV en lugar de los de la empresa. El NIF y la web siguen siendo los de "
+"la empresa."
+
+#. module: pos_config_shop_identity
+#: model:ir.model.fields,field_description:pos_config_shop_identity.field_pos_config__shop_identity_name
+#: model:ir.model.fields,field_description:pos_config_shop_identity.field_res_config_settings__pos_shop_identity_name
+msgid "Shop name"
+msgstr "Nombre de tienda"
+
+#. module: pos_config_shop_identity
+#: model:ir.model.fields,field_description:pos_config_shop_identity.field_pos_config__shop_identity_state_id
+#: model:ir.model.fields,field_description:pos_config_shop_identity.field_res_config_settings__pos_shop_identity_state_id
+msgid "State"
+msgstr "Provincia"
+
+#. module: pos_config_shop_identity
+#: model:ir.model.fields,field_description:pos_config_shop_identity.field_pos_config__shop_identity_street
+#: model:ir.model.fields,field_description:pos_config_shop_identity.field_res_config_settings__pos_shop_identity_street
+msgid "Street"
+msgstr "Calle"
+
+#. module: pos_config_shop_identity
+#: model:ir.model.fields,field_description:pos_config_shop_identity.field_pos_config__shop_identity_street2
+#: model:ir.model.fields,field_description:pos_config_shop_identity.field_res_config_settings__pos_shop_identity_street2
+msgid "Street 2"
+msgstr "Calle 2"
+
+#. module: pos_config_shop_identity
+#: model:ir.model.fields,help:pos_config_shop_identity.field_pos_config__shop_identity_zip_id
+msgid ""
+"Type the ZIP or city name to fill city and state (for example 11204 → "
+"Algeciras, Cádiz)."
+msgstr ""
+"Escriba el C.P. o el nombre de la ciudad para rellenar ciudad y provincia "
+"(por ejemplo 11204 → Algeciras, Cádiz)."
+
+#. module: pos_config_shop_identity
+#: model:ir.model.fields,field_description:pos_config_shop_identity.field_pos_config__shop_identity_zip
+#: model:ir.model.fields,field_description:pos_config_shop_identity.field_res_config_settings__pos_shop_identity_zip
+msgid "ZIP"
+msgstr "C.P."
+
+#. module: pos_config_shop_identity
+#: model:ir.model.fields,field_description:pos_config_shop_identity.field_pos_config__shop_identity_zip_id
+#: model:ir.model.fields,field_description:pos_config_shop_identity.field_res_config_settings__pos_shop_identity_zip_id
+msgid "ZIP Location"
+msgstr "C.P."
+
+#. module: pos_config_shop_identity
+#: model_terms:ir.ui.view,arch_db:pos_config_shop_identity.res_config_settings_view_form
+msgid "ZIP, city, state"
+msgstr "C.P., ciudad, provincia"
+
+#. module: pos_config_shop_identity
+#: model:ir.model.fields,help:pos_config_shop_identity.field_pos_config__shop_identity_name
+msgid ""
+"Commercial name printed on the receipt header. Leave empty to hide the "
+"company legal name on this POS ticket."
+msgstr ""
+"Nombre comercial impreso en el encabezado del ticket. Si se deja vacío, no "
+"se muestra la razón social de la empresa en este TPV."
