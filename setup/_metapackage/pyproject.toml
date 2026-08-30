@@ -18,6 +18,7 @@ dependencies = [
     "odoo-addon-pos_partner_birthdate==18.0.*",
     "odoo-addon-pos_payment_method_cashdro==18.0.*",
     "odoo-addon-pos_payment_terminal==18.0.*",
+    "odoo-addon-pos_product_card_overlay==18.0.*",
     "odoo-addon-pos_product_display_default_code==18.0.*",
     "odoo-addon-pos_product_expiry==18.0.*",
     "odoo-addon-pos_product_multi_barcode==18.0.*",

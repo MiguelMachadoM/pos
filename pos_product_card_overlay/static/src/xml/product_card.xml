@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+    Copyright 2026 Miguel Machado <memachado@gmail.com>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+-->
+<templates id="template" xml:space="preserve">
+
+    <t
+        t-name="pos_product_card_overlay.ProductCard"
+        t-inherit="point_of_sale.ProductCard"
+        t-inherit-mode="extension"
+    >
+        <xpath expr="//article" position="attributes">
+            <attribute
+                name="t-att-class"
+            >{'o_pos_product_card_overlay': props.imageUrl}</attribute>
+        </xpath>
+        <xpath expr="//div[hasclass('product-content')]" position="attributes">
+            <attribute
+                name="t-att-class"
+            >{'product-content--overlay': props.imageUrl, 'h-100': !props.imageUrl, 'px-0': props.imageUrl}</attribute>
+        </xpath>
+        <!-- Replace is required: image cards need a two-line overlay (code + name)
+             while no-image cards must keep the core full-card name node. -->
+        <xpath expr="//div[hasclass('product-name')]" position="replace">
+            <t t-if="!props.imageUrl">
+                <div
+                    class="overflow-hidden lh-sm product-name my-2 no-image d-flex justify-content-center align-items-center text-center fs-4"
+                    t-attf-id="article_product_{{props.productId}}"
+                    t-esc="props.name"
+                />
+            </t>
+            <t t-else="">
+                <div
+                    class="overflow-hidden lh-sm product-name product-name--on-image flex-grow-1"
+                    t-attf-id="article_product_{{props.productId}}"
+                >
+                    <div
+                        t-if="this.cardReference"
+                        class="product-default-code"
+                        t-esc="this.cardReference"
+                    />
+                    <div class="product-display-name" t-esc="this.cardProductName" />
+                </div>
+            </t>
+        </xpath>
+    </t>
+
+</templates>
