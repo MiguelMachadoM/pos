@@ -70,7 +70,7 @@ session so SCSS/JS assets reload.
 Bug Tracker
 ===========
 
-Bugs are tracked on `GitHub Issues <https://github.com/MiguelMachadoM/Odoo18-Addons/issues>`_.
+Bugs are tracked on `GitHub Issues <https://github.com/OCA/pos/issues>`_.
 Please check there whether your issue has already been reported.
 
 Credits
