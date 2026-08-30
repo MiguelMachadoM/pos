@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>POS product grid sort</title>
+</head>
+<body>
+<section class="oe_container">
+  <div class="oe_row oe_spaced">
+    <h2 class="oe_slogan">POS product grid sort</h2>
+    <h3 class="oe_slogan">Configurable grid order, favorites first, top sales</h3>
+    <div class="oe_span12 text-justify">
+      <p>
+        Uses the standard product <strong>Sequence</strong> field and a
+        <strong>configurable sort order</strong> for the Point of Sale product
+        grid (per POS configuration).
+      </p>
+      <ul>
+        <li><strong>POS product grid order</strong> in POS settings (sequence, reference, name, top sales).</li>
+        <li><strong>Favorites first</strong> (default on): Odoo favorites before the rest; same inner order.</li>
+        <li><strong>Top sales</strong>: optional sort by paid POS quantity; daily cron with editable local time/timezone.</li>
+      </ul>
+      <p>
+        Default sort: Sequence → internal reference → name.
+        Sequence is visible on the product form and editable from the POS.
+        New products default to 1000. On install, Sequence 1 is aligned to 1000;
+        other values are kept.
+      </p>
+    </div>
+  </div>
+</section>
+</body>
+</html>

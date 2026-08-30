@@ -1,0 +1,233 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* pos_product_sort
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-24 11:30+0000\n"
+"PO-Revision-Date: 2026-08-24 11:30+0000\n"
+"Last-Translator: Miguel Machado <memachado@gmail.com>\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: pos_product_sort
+#: model:ir.module.module,shortdesc:pos_product_sort.module_pos_product_sort
+msgid "POS product grid sort"
+msgstr "Orden de la rejilla de productos TPV"
+
+#. module: pos_product_sort
+#: model:ir.module.module,summary:pos_product_sort.module_pos_product_sort
+msgid "Configurable POS grid sort (sequence, top sales) and favorites first"
+msgstr "Orden configurable de la rejilla TPV (secuencia, top ventas) y favoritos primero"
+
+#. module: pos_product_sort
+#: model:ir.model,name:pos_product_sort.model_pos_config_product_grid_sort_line
+msgid "POS product grid sort criterion"
+msgstr "Criterio de orden de la rejilla TPV"
+
+#. module: pos_product_sort
+#: model:ir.model.fields,field_description:pos_product_sort.field_pos_config_product_grid_sort_line__config_id
+msgid "POS configuration"
+msgstr "Configuración TPV"
+
+#. module: pos_product_sort
+#: model:ir.model.fields,field_description:pos_product_sort.field_pos_config__pos_product_grid_sort_line_ids
+#: model:ir.model.fields,field_description:pos_product_sort.field_res_config_settings__pos_pos_product_grid_sort_line_ids
+msgid "Product grid sort order"
+msgstr "Orden de la rejilla de productos"
+
+#. module: pos_product_sort
+#: model:ir.model.fields,help:pos_product_sort.field_pos_config__pos_product_grid_sort_line_ids
+#: model:ir.model.fields,help:pos_product_sort.field_res_config_settings__pos_pos_product_grid_sort_line_ids
+msgid "Fields and direction used to order products in the POS grid (first row = highest priority)."
+msgstr "Campos y dirección usados para ordenar los productos en la rejilla del TPV (la primera fila tiene la prioridad más alta)."
+
+#. module: pos_product_sort
+#: model_terms:ir.ui.view,arch_db:pos_product_sort.res_config_settings_view_form_pos_sequence_grid_sort
+msgid "POS product grid order"
+msgstr "Orden de la rejilla de productos (TPV)"
+
+#. module: pos_product_sort
+#: model_terms:ir.ui.view,arch_db:pos_product_sort.res_config_settings_view_form_pos_sequence_grid_sort
+msgid "Define which product fields sort the POS grid and in which order. First row has highest priority."
+msgstr "Indica qué campos ordenan la rejilla del TPV y en qué orden. La primera fila tiene la prioridad más alta."
+
+#. module: pos_product_sort
+#: model:ir.model.fields,field_description:pos_product_sort.field_pos_config_product_grid_sort_line__field_key
+msgid "Sort by"
+msgstr "Ordenar por"
+
+#. module: pos_product_sort
+#: model:ir.model.fields,field_description:pos_product_sort.field_pos_config_product_grid_sort_line__direction
+msgid "Direction"
+msgstr "Dirección"
+
+#. module: pos_product_sort
+#: model:ir.model.fields.selection,name:pos_product_sort.selection__pos_config_product_grid_sort_line__field_key__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: pos_product_sort
+#: model:ir.model.fields.selection,name:pos_product_sort.selection__pos_config_product_grid_sort_line__field_key__default_code
+msgid "Internal reference"
+msgstr "Referencia interna"
+
+#. module: pos_product_sort
+#: model:ir.model.fields.selection,name:pos_product_sort.selection__pos_config_product_grid_sort_line__field_key__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: pos_product_sort
+#: model:ir.model.fields.selection,name:pos_product_sort.selection__pos_config_product_grid_sort_line__field_key__top_sales
+msgid "Top sales (POS quantity sold)"
+msgstr "Top ventas (cantidad vendida en TPV)"
+
+#. module: pos_product_sort
+#: model:ir.model.fields.selection,name:pos_product_sort.selection__pos_config_product_grid_sort_line__direction__asc
+msgid "Ascending"
+msgstr "Ascendente"
+
+#. module: pos_product_sort
+#: model:ir.model.fields.selection,name:pos_product_sort.selection__pos_config_product_grid_sort_line__direction__desc
+msgid "Descending"
+msgstr "Descendente"
+
+#. module: pos_product_sort
+#: model_terms:ir.ui.view,arch_db:pos_product_sort.res_config_settings_view_form_pos_sequence_grid_sort
+msgid "Default: Sequence, internal reference, name. «Top sales» uses quantity sold on paid POS orders. Enable the daily recompute below if you use that sort key. Mark favorites on the product or from the POS product info popup (Odoo standard)."
+msgstr "Por defecto: Secuencia, referencia interna, nombre. «Top ventas» usa la cantidad vendida en pedidos TPV pagados. Active el recálculo diario de abajo si usa ese criterio. Marque favoritos en el producto o desde la ventana de información del TPV (estándar de Odoo)."
+
+#. module: pos_product_sort
+#: model:ir.model.fields,field_description:pos_product_sort.field_pos_config__pos_product_grid_favorites_first
+#: model:ir.model.fields,field_description:pos_product_sort.field_res_config_settings__pos_pos_product_grid_favorites_first
+#: model_terms:ir.ui.view,arch_db:pos_product_sort.res_config_settings_view_form_pos_sequence_grid_sort
+msgid "POS grid: favorites first"
+msgstr "TPV: favoritos primero"
+
+#. module: pos_product_sort
+#: model_terms:ir.ui.view,arch_db:pos_product_sort.res_config_settings_view_form_pos_sequence_grid_sort
+msgid "Favorite products (star in product form or POS info) appear before the rest; sort order below still applies within each group."
+msgstr "Los productos favoritos (estrella en la ficha o en la info del TPV) aparecen antes que el resto; el orden de abajo sigue aplicándose dentro de cada grupo."
+
+#. module: pos_product_sort
+#: model:ir.model.fields,help:pos_product_sort.field_pos_config__pos_product_grid_favorites_first
+#: model:ir.model.fields,help:pos_product_sort.field_res_config_settings__pos_pos_product_grid_favorites_first
+msgid "When enabled, products marked as favorites in the catalog are shown before others in the POS grid. Within favorites and non-favorites, the configured sort order still applies."
+msgstr "Si está activo, los productos marcados como favoritos en el catálogo se muestran antes que el resto en la rejilla del TPV. Dentro de favoritos y no favoritos se aplica el orden configurado."
+
+#. module: pos_product_sort
+#: model:ir.model.fields,field_description:pos_product_sort.field_res_config_settings__pos_sequence_top_sales_cron_active
+#: model_terms:ir.ui.view,arch_db:pos_product_sort.res_config_settings_view_form_pos_sequence_grid_sort
+msgid "Recompute top sales daily"
+msgstr "Recalcular top ventas cada día"
+
+#. module: pos_product_sort
+#: model_terms:ir.ui.view,arch_db:pos_product_sort.res_config_settings_view_form_pos_sequence_grid_sort
+msgid "Turns on the scheduled action that refreshes POS quantity sold (Top sales sort). Off by default. One job for all POS shops. Hour and timezone are set on that scheduled action."
+msgstr "Activa la acción planificada que actualiza la cantidad vendida en TPV (orden Top ventas). Desactivada por defecto. Un único trabajo para todas las cajas. La hora y la zona horaria se configuran en esa acción planificada."
+
+#. module: pos_product_sort
+#: model:ir.model.fields,help:pos_product_sort.field_res_config_settings__pos_sequence_top_sales_cron_active
+msgid "Enable the daily scheduled action that updates POS quantity sold (used by the Top sales grid sort). Off by default. Shared by all POS shops. Hour and timezone are set on that scheduled action."
+msgstr "Activa la acción planificada diaria que actualiza la cantidad vendida en TPV (usada por el orden Top ventas). Desactivada por defecto. Compartida por todas las cajas. La hora y la zona horaria se configuran en esa acción planificada."
+
+#. module: pos_product_sort
+#: model:ir.model.fields,field_description:pos_product_sort.field_product_product__pos_top_sales_qty
+msgid "POS quantity sold"
+msgstr "Cantidad vendida en TPV"
+
+#. module: pos_product_sort
+#: model:ir.model.fields,help:pos_product_sort.field_product_product__pos_top_sales_qty
+msgid "Total quantity sold on paid POS orders (all configurations). Used when «Top sales» is enabled in the POS grid sort order. Updated by the scheduled action «POS sequence: recompute top sales quantities» when that job is enabled in POS settings (Recompute top sales daily)."
+msgstr "Cantidad total vendida en pedidos TPV pagados (todas las configuraciones). Se usa cuando «Top ventas» está en el orden de la rejilla. La actualiza la acción planificada «TPV: recalcular cantidades de top ventas» si está activa en Ajustes TPV (Recalcular top ventas cada día)."
+
+#. module: pos_product_sort
+#: model:ir.actions.server,name:pos_product_sort.ir_cron_recompute_pos_top_sales_qty_ir_actions_server
+#: model:ir.cron,cron_name:pos_product_sort.ir_cron_recompute_pos_top_sales_qty
+#: model:ir.cron,name:pos_product_sort.ir_cron_recompute_pos_top_sales_qty
+msgid "POS sequence: recompute top sales quantities"
+msgstr "TPV: recalcular cantidades de top ventas"
+
+#. module: pos_product_sort
+#: model:ir.model.fields,field_description:pos_product_sort.field_ir_cron__pos_sequence_local_hour
+msgid "Local run hour"
+msgstr "Hora local de ejecución"
+
+#. module: pos_product_sort
+#: model:ir.model.fields,help:pos_product_sort.field_ir_cron__pos_sequence_local_hour
+msgid "Hour (0-23) for the daily top-sales job in the timezone below."
+msgstr "Hora (0-23) del trabajo diario de top ventas en la zona horaria de abajo."
+
+#. module: pos_product_sort
+#: model:ir.model.fields,field_description:pos_product_sort.field_ir_cron__pos_sequence_local_minute
+msgid "Local run minute"
+msgstr "Minuto local de ejecución"
+
+#. module: pos_product_sort
+#: model:ir.model.fields,help:pos_product_sort.field_ir_cron__pos_sequence_local_minute
+msgid "Minute (0-59) for the daily top-sales job in the timezone below."
+msgstr "Minuto (0-59) del trabajo diario de top ventas en la zona horaria de abajo."
+
+#. module: pos_product_sort
+#: model:ir.model.fields,field_description:pos_product_sort.field_ir_cron__pos_sequence_local_tz
+msgid "Local timezone"
+msgstr "Zona horaria local"
+
+#. module: pos_product_sort
+#: model:ir.model.fields,help:pos_product_sort.field_ir_cron__pos_sequence_local_tz
+msgid "Timezone for local hour/minute. If empty, the main company's timezone is used when scheduling the next run."
+msgstr "Zona horaria para la hora/minuto locales. Si está vacía, se usa la zona horaria de la compañía principal al programar la siguiente ejecución."
+
+#. module: pos_product_sort
+#: model_terms:ir.ui.view,arch_db:pos_product_sort.ir_cron_view_form_pos_sequence_top_sales
+msgid "POS top sales — daily local time"
+msgstr "Top ventas TPV — hora local diaria"
+
+#. module: pos_product_sort
+#: model_terms:ir.ui.view,arch_db:pos_product_sort.ir_cron_view_form_pos_sequence_top_sales
+msgid "Next run is scheduled every day at this local time (timezone above, or main company timezone if empty). Changing hour, minute or timezone updates «Next Execution Date»."
+msgstr "La siguiente ejecución se programa cada día a esta hora local (zona horaria de arriba, o la de la compañía principal si está vacía). Cambiar hora, minuto o zona horaria actualiza «Próxima fecha de ejecución»."
+
+#. module: pos_product_sort
+#: model:ir.model.fields,help:pos_product_sort.field_product_template__sequence
+msgid "Gives the sequence order when displaying a product list, including the POS grid when Sequence is used in Point of Sale > Configuration > Settings > POS product grid order. Lower values appear first. New products default to 1000 so they do not jump to the front of the POS grid. On install, rows still at Odoo's create default (1) are set to 1000; other Sequence values are left unchanged."
+msgstr "Define el orden al mostrar una lista de productos, incluida la rejilla del TPV cuando se usa Secuencia en Punto de venta > Configuración > Ajustes > Orden de la rejilla de productos (TPV). Los valores más bajos aparecen primero. Los productos nuevos usan 1000 para no colocarse al principio. Al instalar, las filas que aún tienen el valor por defecto de Odoo (1) pasan a 1000; el resto de valores no se modifican."
+
+#. module: pos_product_sort
+#. odoo-python
+#: code:addons/pos_product_sort/models/pos_config_product_grid_sort_line.py:0
+msgid "Each sort field can only appear once in the grid order for POS configuration '%(config)s'."
+msgstr "Cada campo de orden solo puede aparecer una vez en la rejilla de la configuración TPV '%(config)s'."
+
+#. module: pos_product_sort
+#. odoo-python
+#: code:addons/pos_product_sort/models/ir_cron.py:0
+msgid "Local run hour must be between 0 and 23."
+msgstr "La hora local de ejecución debe estar entre 0 y 23."
+
+#. module: pos_product_sort
+#. odoo-python
+#: code:addons/pos_product_sort/models/ir_cron.py:0
+msgid "Local run minute must be between 0 and 59."
+msgstr "El minuto local de ejecución debe estar entre 0 y 59."
+
+#. module: pos_product_sort
+#: model:ir.model.fields,help:pos_product_sort.field_pos_config__pos_product_grid_sort_spec
+msgid "JSON sort specification sent to the POS client."
+msgstr "Especificación JSON del orden enviada al cliente TPV."
+
+#. module: pos_product_sort
+#: model:ir.model.fields,field_description:pos_product_sort.field_pos_config__pos_product_grid_sort_spec
+msgid "Pos Product Grid Sort Spec"
+msgstr "Especificación de orden de la rejilla TPV"
+
+#. module: pos_product_sort
+#: model:ir.model.fields,field_description:pos_product_sort.field_ir_cron__is_pos_sequence_top_sales_cron
+msgid "Is Pos Sequence Top Sales Cron"
+msgstr "Es el cron de top ventas TPV"

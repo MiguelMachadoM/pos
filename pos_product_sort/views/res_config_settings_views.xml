@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 Miguel Machado
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl-3.0). -->
+<odoo>
+    <record
+        id="res_config_settings_view_form_pos_sequence_grid_sort"
+        model="ir.ui.view"
+    >
+        <field
+            name="name"
+        >res.config.settings.view.form.inherit.pos.sequence.grid.sort</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//block[@id='pos_interface_section']" position="inside">
+                <setting
+                    id="pos_sequence_grid_favorites_first_setting"
+                    string="POS grid: favorites first"
+                    help="Favorite products (star in product form or POS info) appear before the rest; sort order below still applies within each group."
+                >
+                    <field name="pos_pos_product_grid_favorites_first" />
+                </setting>
+                <setting
+                    id="pos_sequence_grid_sort_setting"
+                    string="POS product grid order"
+                    help="Define which product fields sort the POS grid and in which order. First row has highest priority."
+                >
+                    <field name="pos_pos_product_grid_sort_line_ids" nolabel="1">
+                        <list editable="bottom">
+                            <field name="sequence" widget="handle" />
+                            <field name="field_key" />
+                            <field name="direction" />
+                        </list>
+                    </field>
+                    <div
+                        class="text-muted mt8"
+                    >Default: Sequence, internal reference, name. «Top sales» uses quantity sold on paid POS orders. Enable the daily recompute below if you use that sort key. Mark favorites on the product or from the POS product info popup (Odoo standard).</div>
+                </setting>
+                <setting
+                    id="pos_sequence_top_sales_cron_setting"
+                    string="Recompute top sales daily"
+                    help="Turns on the scheduled action that refreshes POS quantity sold (Top sales sort). Off by default. One job for all POS shops. Hour and timezone are set on that scheduled action."
+                >
+                    <field name="pos_sequence_top_sales_cron_active" />
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>

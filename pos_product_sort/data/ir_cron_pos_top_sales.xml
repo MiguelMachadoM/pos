@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 Miguel Machado
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl-3.0). -->
+<odoo noupdate="1">
+    <!--
+      Recompute pos_top_sales_qty once per day. Inactive by default; enable it
+      from Point of Sale > Configuration > Settings (Recompute top sales daily).
+      Default local time 03:00 (company timezone if none is set on the cron).
+    -->
+    <record id="ir_cron_recompute_pos_top_sales_qty" model="ir.cron">
+        <field name="name">POS sequence: recompute top sales quantities</field>
+        <field name="user_id" ref="base.user_root" />
+        <field name="model_id" ref="product.model_product_product" />
+        <field name="state">code</field>
+        <field
+            name="code"
+        >model.search([('available_in_pos', '=', True)])._recompute_pos_top_sales_qty()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="pos_sequence_local_hour">3</field>
+        <field name="pos_sequence_local_minute">0</field>
+        <field name="active" eval="False" />
+        <field name="priority">15</field>
+    </record>
+</odoo>

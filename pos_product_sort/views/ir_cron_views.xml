@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 Miguel Machado
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl-3.0). -->
+<odoo>
+    <record id="ir_cron_view_form_pos_sequence_top_sales" model="ir.ui.view">
+        <field name="name">ir.cron.view.form.inherit.pos.sequence.top.sales</field>
+        <field name="model">ir.cron</field>
+        <field name="inherit_id" ref="base.ir_cron_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='interval_number']" position="before">
+                <field name="is_pos_sequence_top_sales_cron" invisible="1" />
+                <group
+                    string="POS top sales — daily local time"
+                    invisible="not is_pos_sequence_top_sales_cron"
+                >
+                    <field name="pos_sequence_local_hour" />
+                    <field name="pos_sequence_local_minute" />
+                    <field name="pos_sequence_local_tz" />
+                    <div
+                        class="text-muted"
+                        colspan="2"
+                    >Next run is scheduled every day at this local time (timezone above, or main company timezone if empty). Changing hour, minute or timezone updates «Next Execution Date».</div>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
