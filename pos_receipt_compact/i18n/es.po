@@ -1,0 +1,141 @@
+# Translation of Odoo Server.
+# This file contains the translation of the module pos_receipt_compact.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-24 16:00+0000\n"
+"PO-Revision-Date: 2026-08-24 16:00+0000\n"
+"Last-Translator: Miguel Machado\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: pos_receipt_compact
+#: model_terms:ir.ui.view,arch_db:pos_receipt_compact.res_config_settings_view_form
+msgid "Compact ticket"
+msgstr "Ticket compacto"
+
+#. module: pos_receipt_compact
+#: model_terms:ir.ui.view,arch_db:pos_receipt_compact.res_config_settings_view_form
+msgid "Footer"
+msgstr "Pie"
+
+#. module: pos_receipt_compact
+#: model_terms:ir.ui.view,arch_db:pos_receipt_compact.res_config_settings_view_form
+msgid ""
+"Font sizes per ticket section, smaller order number, and hide the quantity "
+"line when the qty is 1."
+msgstr ""
+"Tamaños de letra por sección del ticket, número de orden más pequeño y "
+"ocultar la línea de cantidad cuando la cantidad es 1."
+
+#. module: pos_receipt_compact
+#: model:ir.model.fields.selection,name:pos_receipt_compact.selection__pos_config__receipt_font_header__large
+#: model:ir.model.fields.selection,name:pos_receipt_compact.selection__pos_config__receipt_font_lines__large
+#: model:ir.model.fields.selection,name:pos_receipt_compact.selection__pos_config__receipt_font_totals__large
+#: model:ir.model.fields.selection,name:pos_receipt_compact.selection__pos_config__receipt_font_footer__large
+#: model:ir.model.fields.selection,name:pos_receipt_compact.selection__pos_config__receipt_font_tracking__large
+msgid "Large"
+msgstr "Grande"
+
+#. module: pos_receipt_compact
+#: model_terms:ir.ui.view,arch_db:pos_receipt_compact.res_config_settings_view_form
+msgid "Header"
+msgstr "Encabezado"
+
+#. module: pos_receipt_compact
+#: model:ir.model.fields.selection,name:pos_receipt_compact.selection__pos_config__receipt_font_tracking__hidden
+msgid "Hidden"
+msgstr "Oculto"
+
+#. module: pos_receipt_compact
+#: model:ir.model.fields,help:pos_receipt_compact.field_pos_config__receipt_hide_unit_qty
+#: model:ir.model.fields,help:pos_receipt_compact.field_res_config_settings__pos_receipt_hide_unit_qty
+msgid "If the quantity is 1, hide the '1.00 x price / Unit' line."
+msgstr "Si la cantidad es 1, oculta la línea «1,00 x precio / Ud.»."
+
+#. module: pos_receipt_compact
+#: model:ir.model.fields,field_description:pos_receipt_compact.field_pos_config__receipt_hide_unit_qty
+#: model:ir.model.fields,field_description:pos_receipt_compact.field_res_config_settings__pos_receipt_hide_unit_qty
+#: model_terms:ir.ui.view,arch_db:pos_receipt_compact.res_config_settings_view_form
+msgid "Hide qty line when quantity is 1"
+msgstr "Ocultar cantidad cuando es 1"
+
+#. module: pos_receipt_compact
+#: model_terms:ir.ui.view,arch_db:pos_receipt_compact.res_config_settings_view_form
+msgid "Hide qty when 1"
+msgstr "Ocultar cantidad si es 1"
+
+#. module: pos_receipt_compact
+#: model:ir.model.fields.selection,name:pos_receipt_compact.selection__pos_config__receipt_font_header__medium
+#: model:ir.model.fields.selection,name:pos_receipt_compact.selection__pos_config__receipt_font_lines__medium
+#: model:ir.model.fields.selection,name:pos_receipt_compact.selection__pos_config__receipt_font_totals__medium
+#: model:ir.model.fields.selection,name:pos_receipt_compact.selection__pos_config__receipt_font_footer__medium
+#: model:ir.model.fields.selection,name:pos_receipt_compact.selection__pos_config__receipt_font_tracking__medium
+msgid "Medium"
+msgstr "Mediano"
+
+#. module: pos_receipt_compact
+#: model_terms:ir.ui.view,arch_db:pos_receipt_compact.res_config_settings_view_form
+msgid "Order number"
+msgstr "Número de orden"
+
+#. module: pos_receipt_compact
+#: model_terms:ir.ui.view,arch_db:pos_receipt_compact.res_config_settings_view_form
+msgid "Product lines"
+msgstr "Líneas de producto"
+
+#. module: pos_receipt_compact
+#: model:ir.model.fields,field_description:pos_receipt_compact.field_pos_config__receipt_font_footer
+#: model:ir.model.fields,field_description:pos_receipt_compact.field_res_config_settings__pos_receipt_font_footer
+msgid "Receipt footer size"
+msgstr "Tamaño del pie del ticket"
+
+#. module: pos_receipt_compact
+#: model:ir.model.fields,field_description:pos_receipt_compact.field_pos_config__receipt_font_header
+#: model:ir.model.fields,field_description:pos_receipt_compact.field_res_config_settings__pos_receipt_font_header
+msgid "Receipt header size"
+msgstr "Tamaño del encabezado del ticket"
+
+#. module: pos_receipt_compact
+#: model:ir.model.fields,field_description:pos_receipt_compact.field_pos_config__receipt_font_tracking
+#: model:ir.model.fields,field_description:pos_receipt_compact.field_res_config_settings__pos_receipt_font_tracking
+msgid "Receipt order number size"
+msgstr "Tamaño del número de orden del ticket"
+
+#. module: pos_receipt_compact
+#: model:ir.model.fields,field_description:pos_receipt_compact.field_pos_config__receipt_font_lines
+#: model:ir.model.fields,field_description:pos_receipt_compact.field_res_config_settings__pos_receipt_font_lines
+msgid "Receipt product lines size"
+msgstr "Tamaño de las líneas de producto del ticket"
+
+#. module: pos_receipt_compact
+#: model:ir.model.fields,field_description:pos_receipt_compact.field_pos_config__receipt_font_totals
+#: model:ir.model.fields,field_description:pos_receipt_compact.field_res_config_settings__pos_receipt_font_totals
+msgid "Receipt totals size"
+msgstr "Tamaño de los totales del ticket"
+
+#. module: pos_receipt_compact
+#: model:ir.model.fields.selection,name:pos_receipt_compact.selection__pos_config__receipt_font_header__small
+#: model:ir.model.fields.selection,name:pos_receipt_compact.selection__pos_config__receipt_font_lines__small
+#: model:ir.model.fields.selection,name:pos_receipt_compact.selection__pos_config__receipt_font_totals__small
+#: model:ir.model.fields.selection,name:pos_receipt_compact.selection__pos_config__receipt_font_footer__small
+#: model:ir.model.fields.selection,name:pos_receipt_compact.selection__pos_config__receipt_font_tracking__small
+msgid "Small"
+msgstr "Pequeño"
+
+#. module: pos_receipt_compact
+#: model:ir.model.fields,help:pos_receipt_compact.field_pos_config__receipt_font_tracking
+#: model:ir.model.fields,help:pos_receipt_compact.field_res_config_settings__pos_receipt_font_tracking
+msgid "Size of the large order number (e.g. 007) on the ticket."
+msgstr "Tamaño del número de orden grande (p. ej. 007) en el ticket."
+
+#. module: pos_receipt_compact
+#: model_terms:ir.ui.view,arch_db:pos_receipt_compact.res_config_settings_view_form
+msgid "Totals"
+msgstr "Totales"

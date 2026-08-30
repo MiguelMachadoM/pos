@@ -1,0 +1,120 @@
+.pos-receipt.p-2 {
+    padding: 0.4rem !important;
+}
+.pos-receipt > br {
+    display: none;
+}
+.pos-receipt .cashier {
+    margin: 0.1rem 0 0.2rem;
+}
+.pos-receipt .cashier div:first-child {
+    margin: 0.15rem 0;
+}
+
+.pos-receipt.o_rcpt_header_small .pos-receipt-contact {
+    font-size: 65%;
+}
+.pos-receipt.o_rcpt_header_medium .pos-receipt-contact {
+    font-size: 75%;
+}
+.pos-receipt.o_rcpt_header_large .pos-receipt-contact {
+    font-size: 85%;
+}
+
+.pos-receipt .tracking-number,
+.pos-receipt h1.tracking-number {
+    line-height: 1.15;
+    margin: 0.1rem 0 !important;
+}
+.pos-receipt.o_rcpt_track_hidden .tracking-number,
+.pos-receipt.o_rcpt_track_hidden h1.tracking-number {
+    display: none !important;
+}
+.pos-receipt.o_rcpt_track_small .tracking-number,
+.pos-receipt.o_rcpt_track_small h1.tracking-number {
+    font-size: 1.15rem !important;
+    font-weight: 600;
+}
+.pos-receipt.o_rcpt_track_medium .tracking-number,
+.pos-receipt.o_rcpt_track_medium h1.tracking-number {
+    font-size: 1.6rem !important;
+    font-weight: 600;
+}
+.pos-receipt.o_rcpt_track_large .tracking-number,
+.pos-receipt.o_rcpt_track_large h1.tracking-number {
+    font-size: 2.2rem !important;
+    font-weight: 700;
+}
+
+.pos-receipt .orderline {
+    padding-top: 0.06rem !important;
+    padding-bottom: 0.06rem !important;
+}
+.pos-receipt .orderline .gap-1 {
+    gap: 0 !important;
+}
+.pos-receipt .orderline .info-list:not(:has(li)) {
+    display: none;
+}
+.pos-receipt .orderline .product-name,
+.pos-receipt .orderline .product-price,
+.pos-receipt .orderline .qty {
+    font-weight: 400 !important;
+}
+/* One line: core wraps the name in <span class="text-wrap"> (Bootstrap
+   white-space: wrap !important), which beats parent .text-truncate. */
+.pos-receipt .orderline .product-name {
+    min-width: 0;
+    overflow: hidden;
+}
+.pos-receipt .orderline .product-price {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+.pos-receipt .orderline .product-name .text-wrap {
+    white-space: nowrap !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    max-width: 100%;
+}
+.pos-receipt.o_rcpt_lines_small .orderline {
+    font-size: 0.85em;
+}
+.pos-receipt.o_rcpt_lines_medium .orderline {
+    font-size: 1em;
+}
+.pos-receipt.o_rcpt_lines_large .orderline {
+    font-size: 1.1em;
+}
+
+.pos-receipt .receipt-total {
+    font-weight: 700 !important;
+}
+.pos-receipt.o_rcpt_totals_small .pos-receipt-amount {
+    font-size: 110%;
+}
+.pos-receipt.o_rcpt_totals_medium .pos-receipt-amount {
+    font-size: 125%;
+}
+.pos-receipt.o_rcpt_totals_large .pos-receipt-amount {
+    font-size: 140%;
+}
+
+.pos-receipt > .pos-receipt-order-data:last-child {
+    margin-top: 0.15rem;
+    line-height: 1.2;
+}
+.pos-receipt > .pos-receipt-order-data:last-child p {
+    margin: 0;
+    padding: 0;
+}
+.pos-receipt.o_rcpt_footer_small > .pos-receipt-order-data:last-child {
+    font-size: 65%;
+}
+.pos-receipt.o_rcpt_footer_medium > .pos-receipt-order-data:last-child {
+    font-size: 75%;
+}
+.pos-receipt.o_rcpt_footer_large > .pos-receipt-order-data:last-child {
+    font-size: 85%;
+}
