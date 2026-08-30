@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 Miguel Machado
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl-3.0). -->
+<odoo>
+    <record
+        id="pos_config_view_form_inherit_product_flexible_search"
+        model="ir.ui.view"
+    >
+        <field name="name">pos.config.form.inherit.product.flexible.search</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.pos_config_view_form" />
+        <field name="arch" type="xml">
+            <!-- Legacy pos.config form (PoS → Configuration → shops). Main UI: Settings → PoS. -->
+            <xpath
+                expr="//div[hasclass('o_settings_container') and hasclass('row') and not(@id)]"
+                position="inside"
+            >
+                <setting
+                    string="POS product search"
+                    name="pos_product_flexible_search_setting"
+                    help="Minimum characters in the product search box before client-side filtering runs."
+                >
+                    <field name="pos_product_search_min_chars" />
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>
