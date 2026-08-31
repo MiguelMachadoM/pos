@@ -4,18 +4,27 @@ import {PosOrder} from "@point_of_sale/app/models/pos_order";
 import {patch} from "@web/core/utils/patch";
 import {floatIsZero} from "@web/core/utils/numbers";
 
-/** Max product name length on the printed / preview receipt (not the cart). */
+/** Default max product name length on the printed / preview receipt. */
 export const RECEIPT_PRODUCT_NAME_MAX = 60;
 
-export function truncateReceiptProductName(name) {
+export function truncateReceiptProductName(name, maxLen = RECEIPT_PRODUCT_NAME_MAX) {
     const text = (name || "").toString();
-    if (text.length <= RECEIPT_PRODUCT_NAME_MAX) {
+    const max = Number(maxLen);
+    if (!Number.isFinite(max) || max <= 0) {
         return text;
     }
-    return `${text.slice(0, RECEIPT_PRODUCT_NAME_MAX).trimEnd()}…`;
+    if (text.length <= max) {
+        return text;
+    }
+    return `${text.slice(0, max).trimEnd()}…`;
 }
 
 function _compactFromConfig(config) {
+    const rawMax = config?.receipt_product_name_max;
+    const productNameMax =
+        rawMax === 0 || rawMax === "0"
+            ? 0
+            : Number(rawMax) || RECEIPT_PRODUCT_NAME_MAX;
     return {
         header: config?.receipt_font_header || "medium",
         tracking: config?.receipt_font_tracking || "small",
@@ -23,6 +32,7 @@ function _compactFromConfig(config) {
         totals: config?.receipt_font_totals || "medium",
         footer: config?.receipt_font_footer || "small",
         hideUnitQty: Boolean(config?.receipt_hide_unit_qty),
+        productNameMax,
     };
 }
 
@@ -69,7 +79,10 @@ patch(PosOrder.prototype, {
                     compact.hideUnitQty && floatIsZero(Math.abs(qty) - 1, decimals);
                 return {
                     ...line,
-                    productName: truncateReceiptProductName(line.productName),
+                    productName: truncateReceiptProductName(
+                        line.productName,
+                        compact.productNameMax,
+                    ),
                     hideQtyBreakdown,
                 };
             });

@@ -19,7 +19,8 @@ POS compact receipt lines
    :local:
 
 Shorter POS receipts: per-section font sizes, smaller order number, regular
-(not bold) product names on one line (ellipsis; 60-character fallback) on the ticket only, no
+(not bold) product names on one line (ellipsis; configurable character
+fallback, default 60) on the ticket only, no
 qty breakdown when the quantity is 1, tighter padding, and a bold TOTAL.
 
 **Depends only on** ``point_of_sale``. Compatible with ``pos_config_logo``,
@@ -35,7 +36,8 @@ Configuration
 
 In *Point of Sale → Configuration → Settings → Bills & Receipts → Compact
 ticket*, set Small / Medium / Large for header, order number, product lines,
-totals and footer. The order number can also be Hidden. Hide the unit-price
+totals and footer. The order number can also be Hidden. Set **Name max
+chars** (default 60; 0 skips JS truncation). Hide the unit-price
 row when qty is 1 (default on). Reopen the POS after changing these values.
 
 Usage
@@ -70,7 +72,8 @@ Backend view
 JavaScript (``static/src/js/receipt_compact.esm.js``)
 -----------------------------------------------------
 
-* ``PosOrder.export_for_printing``: truncate names to 60 chars (fallback)
+* ``PosOrder.export_for_printing``: truncate names to
+  ``receipt_product_name_max`` chars (fallback; 0 skips JS cut)
   and set ``hideQtyBreakdown`` for printed lines only (cart uses
   ``getDisplayData()`` unchanged).
 * ``OrderReceipt.compactReceiptClass``: CSS classes from ``pos.config``.
@@ -89,9 +92,9 @@ without touching ``ReceiptHeader`` XML). Does **not** style
 Models
 ------
 
-``pos.config`` fields ``receipt_font_*`` and ``receipt_hide_unit_qty``,
-exposed on ``res.config.settings`` and included in
-``_load_pos_data_fields``.
+``pos.config`` fields ``receipt_font_*``, ``receipt_hide_unit_qty`` and
+``receipt_product_name_max``, exposed on ``res.config.settings`` and
+included in ``_load_pos_data_fields``.
 
 Bug Tracker
 ===========

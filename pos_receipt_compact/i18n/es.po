@@ -28,11 +28,12 @@ msgstr "Pie"
 #. module: pos_receipt_compact
 #: model_terms:ir.ui.view,arch_db:pos_receipt_compact.res_config_settings_view_form
 msgid ""
-"Font sizes per ticket section, smaller order number, and hide the quantity "
-"line when the qty is 1."
+"Font sizes per ticket section, smaller order number, product name max "
+"length, and hide the quantity line when the qty is 1."
 msgstr ""
-"Tamaños de letra por sección del ticket, número de orden más pequeño y "
-"ocultar la línea de cantidad cuando la cantidad es 1."
+"Tamaños de letra por sección del ticket, número de orden más pequeño, "
+"máximo de caracteres del nombre y ocultar la línea de cantidad cuando la "
+"cantidad es 1."
 
 #. module: pos_receipt_compact
 #: model:ir.model.fields.selection,name:pos_receipt_compact.selection__pos_config__receipt_font_header__large
@@ -82,6 +83,11 @@ msgstr "Mediano"
 
 #. module: pos_receipt_compact
 #: model_terms:ir.ui.view,arch_db:pos_receipt_compact.res_config_settings_view_form
+msgid "Name max chars"
+msgstr "Máx. caracteres del nombre"
+
+#. module: pos_receipt_compact
+#: model_terms:ir.ui.view,arch_db:pos_receipt_compact.res_config_settings_view_form
 msgid "Order number"
 msgstr "Número de orden"
 
@@ -115,6 +121,24 @@ msgid "Receipt product lines size"
 msgstr "Tamaño de las líneas de producto del ticket"
 
 #. module: pos_receipt_compact
+#: model:ir.model.fields,field_description:pos_receipt_compact.field_pos_config__receipt_product_name_max
+#: model:ir.model.fields,field_description:pos_receipt_compact.field_res_config_settings__pos_receipt_product_name_max
+msgid "Receipt product name max length"
+msgstr "Longitud máxima del nombre en el ticket"
+
+#. module: pos_receipt_compact
+#: model:ir.model.fields,help:pos_receipt_compact.field_pos_config__receipt_product_name_max
+#: model:ir.model.fields,help:pos_receipt_compact.field_res_config_settings__pos_receipt_product_name_max
+msgid ""
+"Maximum characters of the product name on the printed ticket. Use a higher "
+"value with a smaller product-line font. Set 0 to skip JS truncation (CSS "
+"ellipsis still applies)."
+msgstr ""
+"Máximo de caracteres del nombre de producto en el ticket impreso. Use un "
+"valor más alto con una letra más pequeña en las líneas. Ponga 0 para no "
+"cortar en JS (elipsis CSS sigue aplicando)."
+
+#. module: pos_receipt_compact
 #: model:ir.model.fields,field_description:pos_receipt_compact.field_pos_config__receipt_font_totals
 #: model:ir.model.fields,field_description:pos_receipt_compact.field_res_config_settings__pos_receipt_font_totals
 msgid "Receipt totals size"
@@ -139,3 +163,8 @@ msgstr "Tamaño del número de orden grande (p. ej. 007) en el ticket."
 #: model_terms:ir.ui.view,arch_db:pos_receipt_compact.res_config_settings_view_form
 msgid "Totals"
 msgstr "Totales"
+
+#. module: pos_receipt_compact
+#: code:addons/pos_receipt_compact/models/pos_config.py:0
+msgid "Product name max length on the receipt cannot be negative."
+msgstr "La longitud máxima del nombre en el ticket no puede ser negativa."

@@ -1,7 +1,8 @@
 # Copyright 2026 Miguel Machado
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl-3.0).
 
-from odoo import api, fields, models
+from odoo import _, api, fields, models
+from odoo.exceptions import ValidationError
 
 RECEIPT_FONT_SIZES = [
     ("small", "Small"),
@@ -23,6 +24,7 @@ _COMPACT_POS_FIELDS = [
     "receipt_font_totals",
     "receipt_font_footer",
     "receipt_hide_unit_qty",
+    "receipt_product_name_max",
 ]
 
 
@@ -65,6 +67,22 @@ class PosConfig(models.Model):
         default=True,
         help="If the quantity is 1, hide the '1.00 x price / Unit' line.",
     )
+    receipt_product_name_max = fields.Integer(
+        string="Receipt product name max length",
+        default=60,
+        required=True,
+        help="Maximum characters of the product name on the printed ticket. "
+        "Use a higher value with a smaller product-line font. "
+        "Set 0 to skip JS truncation (CSS ellipsis still applies).",
+    )
+
+    @api.constrains("receipt_product_name_max")
+    def _check_receipt_product_name_max(self):
+        for rec in self:
+            if rec.receipt_product_name_max < 0:
+                raise ValidationError(
+                    _("Product name max length on the receipt cannot be negative.")
+                )
 
     @api.model
     def _load_pos_data_fields(self, config_id):

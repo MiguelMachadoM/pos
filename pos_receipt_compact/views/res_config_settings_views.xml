@@ -14,7 +14,7 @@
                 <setting
                     id="pos_receipt_compact_setting"
                     string="Compact ticket"
-                    help="Font sizes per ticket section, smaller order number, and hide the quantity line when the qty is 1."
+                    help="Font sizes per ticket section, smaller order number, product name max length, and hide the quantity line when the qty is 1."
                 >
                     <div class="content-group mt16">
                         <div class="row mt8">
@@ -56,6 +56,17 @@
                                 class="col-lg-3 o_light_label"
                             />
                             <field name="pos_receipt_font_footer" class="col-lg-4" />
+                        </div>
+                        <div class="row mt8">
+                            <label
+                                for="pos_receipt_product_name_max"
+                                string="Name max chars"
+                                class="col-lg-3 o_light_label"
+                            />
+                            <field
+                                name="pos_receipt_product_name_max"
+                                class="col-lg-4"
+                            />
                         </div>
                         <div class="row mt16">
                             <label

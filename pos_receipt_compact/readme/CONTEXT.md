@@ -52,8 +52,8 @@ modules keep their own xpaths.
 
 - Inserts the *Compact ticket* setting block inside
   ``pos_bills_and_receipts_section``.
-- Why: per-POS font sizes and the "hide qty when 1" checkbox, without a
-  dedicated ``pos.config`` form.
+- Why: per-POS font sizes, product-name max length, and the "hide qty
+  when 1" checkbox, without a dedicated ``pos.config`` form.
 
 ## JavaScript patches
 
@@ -61,7 +61,8 @@ modules keep their own xpaths.
 
 - ``PosOrder.export_for_printing``: after ``super``, attach
   ``compactReceipt`` from ``this.config``, truncate each printed
-  ``productName`` to 60 characters (fallback), and set
+  ``productName`` to ``receipt_product_name_max`` characters (fallback;
+  0 skips JS truncation), and set
   ``hideQtyBreakdown`` when ``|qty| ≈ 1``. Cart ``getDisplayData()``
   is not patched.
 - ``OrderReceipt``: getter ``compactReceiptClass`` for the root CSS
@@ -91,5 +92,6 @@ the cart is untouched:
 
 ``pos.config`` fields (loaded into the POS via ``_load_pos_data_fields``):
 ``receipt_font_header``, ``receipt_font_tracking``, ``receipt_font_lines``,
-``receipt_font_totals``, ``receipt_font_footer``, ``receipt_hide_unit_qty``.
+``receipt_font_totals``, ``receipt_font_footer``, ``receipt_hide_unit_qty``,
+``receipt_product_name_max``.
 ``res.config.settings`` exposes them as related fields.

@@ -13,5 +13,10 @@ ticket*, pick a size per section:
 - Footer (Powered by Odoo, order name, date)
 
 Enable **Hide qty when 1** to drop the unit-price breakdown on single-unit
-lines (on by default). After changing values, close and reopen the POS so
-the client reloads ``pos.config``.
+lines (on by default).
+
+**Name max chars** is the JS fallback length for product names on the
+ticket (default 60). Raise it if product lines use a smaller font so more
+of the name fits. Set **0** to skip JS truncation; CSS ellipsis still
+cuts overflow on one line. After changing values, close and reopen the POS
+so the client reloads ``pos.config``.

@@ -31,3 +31,7 @@ class ResConfigSettings(models.TransientModel):
         related="pos_config_id.receipt_hide_unit_qty",
         readonly=False,
     )
+    pos_receipt_product_name_max = fields.Integer(
+        related="pos_config_id.receipt_product_name_max",
+        readonly=False,
+    )

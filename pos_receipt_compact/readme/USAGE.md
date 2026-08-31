@@ -1,7 +1,7 @@
 Open the POS, complete an order and show or print the receipt.
 
-Product names stay on one line (CSS ellipsis; JS fallback at 60 characters)
-and are not bold.
+Product names stay on one line (CSS ellipsis; JS fallback at the configured
+character limit, default 60) and are not bold.
 If the quantity is 1, the ``1.00 x price / Unit`` row is hidden (configurable).
 TOTAL is printed in bold. The footer ("Powered by Odoo", order name, date) is
 tighter, without the extra gap in the middle.
