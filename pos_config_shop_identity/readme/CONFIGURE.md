@@ -6,8 +6,8 @@ To configure this module, you need to:
 - Fill in shop name, street, ZIP (search by code or city), city, province,
   phone and optional email
 
-The ZIP field uses ``base_location`` locations. Example: type ``11204`` and
-pick ``11204, Algeciras, Cádiz``; city and province fill in. Geonames / Spanish
+The ZIP field uses ``base_location`` locations. Example: type ``28001`` and
+pick ``28001, Madrid``; city and province fill in. Geonames / Spanish
 toponyms must be imported in the database (``base_location_geonames_import``
 and/or ``l10n_es_toponyms``).
 

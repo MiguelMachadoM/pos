@@ -43,7 +43,7 @@ Configuration
 
 Go to *Point of Sale > Configuration > Settings*, select the POS, enable
 *Custom ticket header identity* and fill in the shop fields. Search the ZIP
-field (for example ``11204``) to fill city and province.
+field (for example ``28001``) to fill city and province.
 
 Usage
 =====

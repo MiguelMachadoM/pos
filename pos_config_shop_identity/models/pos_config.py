@@ -36,7 +36,7 @@ class PosConfig(models.Model):
         "res.city.zip",
         string="ZIP Location",
         help="Type the ZIP or city name to fill city and state "
-        "(for example 11204 → Algeciras, Cádiz).",
+        "(for example 28001 → Madrid).",
     )
     shop_identity_zip = fields.Char(string="ZIP")
     shop_identity_city = fields.Char(string="City")

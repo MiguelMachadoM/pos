@@ -93,11 +93,11 @@ msgstr "Calle 2"
 #. module: pos_config_shop_identity
 #: model:ir.model.fields,help:pos_config_shop_identity.field_pos_config__shop_identity_zip_id
 msgid ""
-"Type the ZIP or city name to fill city and state (for example 11204 → "
-"Algeciras, Cádiz)."
+"Type the ZIP or city name to fill city and state (for example 28001 → "
+"Madrid)."
 msgstr ""
 "Escriba el C.P. o el nombre de la ciudad para rellenar ciudad y provincia "
-"(por ejemplo 11204 → Algeciras, Cádiz)."
+"(por ejemplo 28001 → Madrid)."
 
 #. module: pos_config_shop_identity
 #: model:ir.model.fields,field_description:pos_config_shop_identity.field_pos_config__shop_identity_zip
