@@ -35,7 +35,7 @@ with small icons. Font sizes of that block can be tuned by
 ``pos_receipt_compact``.
 
 Spanish simplified invoice (``Factura simplificada: number``) is a separate
-glue addon: ``pos_config_shop_identity_l10n_es``.
+glue addon: ``l10n_es_pos_config_shop_identity`` (OCA/l10n-spain).
 
 
 Configuration

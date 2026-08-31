@@ -16,4 +16,4 @@ are omitted (they do not fall back to company name, address, phone or email).
 The logo is unchanged; use `pos_config_logo` for that.
 
 If the database uses Spanish POS (`l10n_es_pos_oca`), install
-`pos_config_shop_identity_l10n_es` as well.
+`l10n_es_pos_config_shop_identity` as well.

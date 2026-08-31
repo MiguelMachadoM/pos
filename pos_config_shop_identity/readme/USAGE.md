@@ -6,5 +6,6 @@ Address is compacted (street, ZIP, city, province). Phone and email print on
 one line with a small phone / envelope icon. Long lines wrap. The company VAT
 is printed with its label.
 
-Spanish POS (``l10n_es_pos_oca``): also install ``pos_config_shop_identity_l10n_es``
-to print the simplified invoice title and number on one line.
+Spanish POS (``l10n_es_pos_oca``): also install
+``l10n_es_pos_config_shop_identity`` (OCA/l10n-spain) to print the simplified
+invoice title and number on one line.
