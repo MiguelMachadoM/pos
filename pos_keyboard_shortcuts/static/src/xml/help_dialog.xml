@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="pos_keyboard_shortcuts.ShortcutHelpDialog">
+        <Dialog title.translate="Keyboard shortcuts" size="'md'">
+            <div class="pos-keyboard-help">
+                <p class="text-muted mb-2">
+                    Keys are set by a POS administrator. Digits still change quantity or amount.
+                </p>
+                <table class="table table-sm mb-3">
+                    <thead>
+                        <tr>
+                            <th>Key</th>
+                            <th>Action</th>
+                            <th>Where</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="fixedRows" t-as="row" t-key="row.key + row.action">
+                            <td><kbd class="pos-keyboard-kbd" t-esc="row.key" /></td>
+                            <td t-esc="row.action" />
+                            <td t-esc="row.scope" />
+                        </tr>
+                        <tr t-foreach="rows" t-as="row" t-key="row.keyId">
+                            <td><kbd class="pos-keyboard-kbd" t-esc="row.key" /></td>
+                            <td t-esc="row.action" />
+                            <td t-esc="row.scope" />
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <t t-set-slot="footer">
+                <button class="btn btn-primary" t-on-click="props.close">Close</button>
+            </t>
+        </Dialog>
+    </t>
+</templates>

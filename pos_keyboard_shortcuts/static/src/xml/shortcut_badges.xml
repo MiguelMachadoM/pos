@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t
+        t-name="pos_keyboard_shortcuts.ControlButtons"
+        t-inherit="point_of_sale.ControlButtons"
+        t-inherit-mode="extension"
+    >
+        <xpath expr="//button[hasclass('o_fiscal_position_button')]" position="inside">
+            <kbd
+                t-if="shortcutLabel('fiscal')"
+                class="pos-keyboard-kbd ms-1"
+                t-esc="shortcutLabel('fiscal')"
+            />
+        </xpath>
+        <xpath expr="//button[hasclass('o_pricelist_button')]" position="inside">
+            <kbd
+                t-if="shortcutLabel('pricelist')"
+                class="pos-keyboard-kbd ms-1"
+                t-esc="shortcutLabel('pricelist')"
+            />
+        </xpath>
+        <xpath expr="//button[contains(@t-on-click, 'clickRefund')]" position="inside">
+            <kbd
+                t-if="shortcutLabel('refund')"
+                class="pos-keyboard-kbd ms-1"
+                t-esc="shortcutLabel('refund')"
+            />
+        </xpath>
+        <xpath expr="//button[contains(@t-on-click, 'onDeleteOrder')]" position="inside">
+            <kbd
+                t-if="shortcutLabel('cancel_order')"
+                class="pos-keyboard-kbd ms-1"
+                t-esc="shortcutLabel('cancel_order')"
+            />
+        </xpath>
+    </t>
+
+    <t
+        t-name="pos_keyboard_shortcuts.SelectPartnerButton"
+        t-inherit="point_of_sale.SelectPartnerButton"
+        t-inherit-mode="extension"
+    >
+        <xpath expr="//button" position="inside">
+            <kbd
+                t-if="customerShortcutLabel"
+                class="pos-keyboard-kbd ms-1"
+                t-esc="customerShortcutLabel"
+            />
+        </xpath>
+    </t>
+
+    <t
+        t-name="pos_keyboard_shortcuts.OrderlineNoteButton"
+        t-inherit="point_of_sale.OrderlineNoteButton"
+        t-inherit-mode="extension"
+    >
+        <xpath expr="//button" position="inside">
+            <kbd
+                t-if="noteShortcutLabel"
+                class="pos-keyboard-kbd ms-1"
+                t-esc="noteShortcutLabel"
+            />
+        </xpath>
+    </t>
+
+    <t
+        t-name="pos_keyboard_shortcuts.PaymentScreenMethods"
+        t-inherit="point_of_sale.PaymentScreenMethods"
+        t-inherit-mode="extension"
+    >
+        <xpath expr="//span[hasclass('payment-name')]" position="after">
+            <kbd
+                t-if="paymentMethodShortcutLabel(paymentMethod)"
+                class="pos-keyboard-kbd ms-1"
+                t-esc="paymentMethodShortcutLabel(paymentMethod)"
+            />
+        </xpath>
+    </t>
+
+    <t
+        t-name="pos_keyboard_shortcuts.PaymentScreenInvoice"
+        t-inherit="point_of_sale.PaymentScreenButtons"
+        t-inherit-mode="extension"
+    >
+        <xpath expr="//button[hasclass('partner-button')]" position="inside">
+            <kbd
+                t-if="customerShortcutLabel"
+                class="pos-keyboard-kbd ms-1"
+                t-esc="customerShortcutLabel"
+            />
+        </xpath>
+        <xpath expr="//button[hasclass('js_invoice')]" position="inside">
+            <kbd
+                t-if="invoiceShortcutLabel"
+                class="pos-keyboard-kbd ms-1"
+                t-esc="invoiceShortcutLabel"
+            />
+        </xpath>
+    </t>
+
+    <t
+        t-name="pos_keyboard_shortcuts.ReceiptScreen"
+        t-inherit="point_of_sale.ReceiptScreen"
+        t-inherit-mode="extension"
+    >
+        <xpath expr="//button[contains(@t-on-click, 'doFullPrint')]" position="inside">
+            <kbd
+                t-if="printFullShortcutLabel"
+                class="pos-keyboard-kbd ms-1"
+                t-esc="printFullShortcutLabel"
+            />
+        </xpath>
+        <xpath expr="//button[contains(@t-on-click, 'doBasicPrint')]" position="inside">
+            <kbd
+                t-if="printBasicShortcutLabel"
+                class="pos-keyboard-kbd ms-1"
+                t-esc="printBasicShortcutLabel"
+            />
+        </xpath>
+    </t>
+</templates>

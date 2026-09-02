@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 Miguel Machado
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl-3.0). -->
+<odoo>
+    <record id="pos_keyboard_shortcut_view_list" model="ir.ui.view">
+        <field name="name">pos.keyboard.shortcut.view.list</field>
+        <field name="model">pos.keyboard.shortcut</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="sequence" widget="handle" />
+                <field name="is_builtin" column_invisible="1" />
+                <field name="action" readonly="is_builtin" />
+                <field name="scope" readonly="is_builtin" />
+                <field
+                    name="payment_method_id"
+                    readonly="action != 'pay_method'"
+                    optional="show"
+                />
+                <field name="key" />
+                <field name="ctrl" />
+                <field name="alt" />
+                <field name="shift" />
+            </list>
+        </field>
+    </record>
+    <record id="pos_keyboard_shortcut_action" model="ir.actions.act_window">
+        <field name="name">POS keyboard shortcuts</field>
+        <field name="res_model">pos.keyboard.shortcut</field>
+        <field name="view_mode">list</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Shortcut keys are created when the module is installed. Add a
+                row (Specific payment method) to bind an extra method to a
+                letter. E/T stay as first cash/bank of each shop. The extra
+                badge only appears on shops that use that method.
+            </p>
+        </field>
+    </record>
+</odoo>

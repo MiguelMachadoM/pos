@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 Miguel Machado
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl-3.0). -->
+<odoo>
+    <record id="pos_config_view_form_inherit_keyboard_shortcuts" model="ir.ui.view">
+        <field name="name">pos.config.form.inherit.keyboard.shortcuts</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.pos_config_view_form" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//div[hasclass('o_settings_container') and hasclass('row') and not(@id)]"
+                position="inside"
+            >
+                <setting
+                    string="Keyboard shortcuts"
+                    name="pos_keyboard_shortcuts_setting"
+                    help="Enable cashier keyboard shortcuts on this Point of Sale. Keys are configured globally under Settings → Point of Sale."
+                >
+                    <field name="iface_keyboard_shortcuts" />
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>

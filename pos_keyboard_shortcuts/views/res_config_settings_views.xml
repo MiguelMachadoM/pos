@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 Miguel Machado
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl-3.0). -->
+<odoo>
+    <record id="res_config_settings_view_form_pos_keyboard_shortcuts" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.pos.keyboard.shortcuts</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//block[@id='pos_interface_section']" position="inside">
+                <setting
+                    id="pos_keyboard_shortcuts_setting"
+                    string="Keyboard shortcuts"
+                    help="Enable cashier keyboard shortcuts on this shop. The key map is global (POS administrators only). The search hold (Off / 5 s / 10 s) keeps the filter so a second match can be tapped and unfocuses the box so the barcode scanner works. Extra payment letters are configured on the shortcut list; each shop only uses the methods assigned to it."
+                >
+                    <field name="pos_iface_keyboard_shortcuts" />
+                    <div
+                        class="content-group mt16"
+                        invisible="not pos_iface_keyboard_shortcuts"
+                    >
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <label
+                                for="keyboard_search_hold_seconds"
+                                string="Keep search filter"
+                                class="mb-0"
+                            />
+                            <field name="keyboard_search_hold_seconds" class="oe_inline" />
+                        </div>
+                        <button
+                            name="%(pos_keyboard_shortcuts.pos_keyboard_shortcut_action)d"
+                            type="action"
+                            string="Configure shortcut keys"
+                            class="btn-link"
+                            groups="point_of_sale.group_pos_manager"
+                        />
+                    </div>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>
