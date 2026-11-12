@@ -19,7 +19,7 @@ patch(Orderline.prototype, {
         return this.pos.config.pos_line_remove_btn && this.props.mode === "display";
     },
     _executeRemove() {
-        const currentOrder = this.pos.get_order();
+        const currentOrder = this.pos.getOrder();
         if (currentOrder && this.props.line) {
             currentOrder.removeOrderline(this.props.line);
         }
