@@ -2,7 +2,7 @@
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
 
 from odoo import api, models
-from odoo.osv.expression import AND
+from odoo.fields import Domain
 
 
 class PosOrder(models.Model):
@@ -14,7 +14,7 @@ class PosOrder(models.Model):
         error when exporting them.
         (odoo/odoo/blob/16.0/addons/point_of_sale/models/pos_order.py#L1107)"""
         with_ref_domain = [("pos_reference", "!=", False)]
-        new_domain = AND([domain, with_ref_domain])
+        new_domain = Domain.AND([domain, with_ref_domain])
         return super().search_paid_order_ids(
             config_id,
             new_domain,
