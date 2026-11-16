@@ -85,11 +85,19 @@ class CashPayInvoice(models.TransientModel):
         # and checks the cash control, the payments are correctly displayed.
         # Otherwise, all payments are shown in Cash regardless of the journal type.
         PosOrder = self.env["pos.order"]
-        pos_order = PosOrder.create(self._prepare_pos_order_vals())
+        vals = self._prepare_pos_order_vals()
+        # Odoo 19: cannot add_payment if account_move is set; _apply_invoice_payments
+        # was removed — create payment moves then reconcile the linked invoice.
+        invoice = self.invoice_id
+        vals.pop("account_move", None)
+        pos_order = PosOrder.create(vals)
         pos_order.write({"name": pos_order._compute_order_name()})
         pos_order.add_payment(self._prepare_pos_payment_vals(pos_order))
-        pos_order._apply_invoice_payments()
-        pos_order.write({"state": "invoiced"})
+        payment_moves = pos_order._get_payments()._create_payment_moves(
+            pos_order.session_id.state == "closed"
+        )
+        pos_order.write({"account_move": invoice.id, "state": "paid"})
+        pos_order._reconcile_invoice_payments(invoice, payment_moves)
 
     def _prepare_pos_order_vals(self):
         return {

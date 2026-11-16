@@ -6,24 +6,32 @@ from odoo.exceptions import UserError
 from odoo.tests import Form
 
 from odoo.addons.base.tests.common import DISABLED_MAIL_CONTEXT
-from odoo.addons.point_of_sale.tests.common import TestPointOfSaleCommon
+from odoo.addons.point_of_sale.tests.common import TestPoSCommon
 
 WIZARD_PAY_INVOICE_VIEW = "pos_session_pay_invoice.view_cash_pay_invoice_form"
 
 
 @odoo.tests.tagged("post_install", "-at_install")
-class TestSessionPayInvoice(TestPointOfSaleCommon):
+class TestSessionPayInvoice(TestPoSCommon):
+    """Odoo 19: TestPointOfSaleCommon was removed; use TestPoSCommon aliases."""
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
         cls.env = cls.env(context=dict(cls.env.context, **DISABLED_MAIL_CONTEXT))
+        cls.pos_config = cls.basic_config
         cls.pos_config.cash_control = True
-        cls.new_journal = cls.env["account.journal"].create(
+        cls.partner1 = cls.customer
+        cls.partner4 = cls.other_customer
+        cls.cash_payment_method = cls.cash_pm1
+        cls.bank_payment_method = cls.bank_pm1
+        cls.credit_payment_method = cls.pay_later_pm
+        cls.product3 = cls.env["product.product"].create(
             {
-                "type": "cash",
-                "name": "New Cash",
-                "code": "NEWCASH",
-                "company_id": cls.env.company.id,
+                "name": "Pay invoice test product",
+                "list_price": 100.0,
+                "available_in_pos": True,
+                "taxes_id": False,
             }
         )
         cls.invoice_out = cls.env["account.move"].create(
